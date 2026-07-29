@@ -3,16 +3,29 @@
 import Link from "next/link";
 import { Form, TextField, Label, Input, FieldError, Button } from "@heroui/react";
 import { Check } from "@gravity-ui/icons";
+import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const router = useRouter();
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
 
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+    const formData = new FormData(e.currentTarget);
 
-    console.log(data);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+
+    const { error } = await authClient.signIn.email({
+      email,
+      password,
+    });
+
+   
+    // Success
+    router.push("/");
+    router.refresh();
   };
-
   return (
     <main className="flex min-h-screen items-center justify-center bg-black px-4">
       <div className="w-full max-w-md rounded-2xl border border-purple-600 bg-zinc-950 p-8">
@@ -27,7 +40,7 @@ export default function LoginPage() {
         <Form
           className="flex flex-col gap-5"
           render={(props) => <form {...props} />}
-          onSubmit={handleSubmit}
+          onSubmit={onSubmit}
         >
           <TextField
             isRequired
