@@ -10,14 +10,34 @@ import {
   Button,
 } from "@heroui/react";
 import { Check } from "@gravity-ui/icons";
+import { authClient } from "@/lib/auth-client";
 
 export default function RegisterPage() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const data = Object.fromEntries(new FormData(e.currentTarget));
+    const formData = new FormData(e.currentTarget);
 
-    console.log(data);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    const image = formData.get("image") as string;
+
+
+    const { data, error } = await authClient.signUp.email({
+      name,
+      email,
+      password,
+      image,
+    });
+
+
+    if (error) {
+      console.log(error.message);
+      return;
+    }
+
+    console.log("User created:", data);
   };
 
   return (
