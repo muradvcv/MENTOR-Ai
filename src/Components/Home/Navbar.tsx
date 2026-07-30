@@ -168,17 +168,11 @@ export default function Navbar() {
                   border border-purple-500/40
                   bg-white/5
                   text-red-500
-                
                   "
-
                   >
-
                     <IoLogOutOutline className="text-2xl" />
 
                   </button>
-
-
-
                 </div>
 
 
@@ -199,9 +193,6 @@ export default function Navbar() {
                       </Button>
 
                     </Link>
-
-
-
                     <Link href="/auth/register">
 
                       <Button className="rounded-xl bg-purple-600 text-white">
@@ -212,7 +203,6 @@ export default function Navbar() {
 
                     </Link>
 
-
                   </>
 
                 )
@@ -221,10 +211,6 @@ export default function Navbar() {
 
 
         </div>
-
-
-
-
 
         {/* Mobile Button */}
 
