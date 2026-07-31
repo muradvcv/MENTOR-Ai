@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = () => {
+const AiNoote = () => {
   return (
     <div>
-      
+      working...
     </div>
   );
 };
 
-export default About;
+export default AiNoote;

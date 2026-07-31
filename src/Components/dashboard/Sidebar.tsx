@@ -6,7 +6,10 @@ import {
   Bars,
   LayoutHeaderCells,
 } from "@gravity-ui/icons";
-import { House, PackagePlus, Package, ShoppingCart, Users, CircleDollarSign, } from "lucide-react";
+import {
+  House, PackagePlus, Package, ShoppingCart, Users, CircleDollarSign,Bot,
+ImageIcon,Code2,FileText,NotebookPen,BrainCircuit,
+} from "lucide-react";
 
 import { Button, Drawer } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
@@ -23,10 +26,14 @@ type NavItem = {
 
 const navItems: Record<Role, NavItem[]> = {
   user: [
-    { icon: LayoutHeaderCells, label: "Overview", href: "/dashboard/user" },
-    { icon: PackagePlus, label: "Add Product", href: "/dashboard/admin/additeam" },
-    { icon: Package, label: "All Products", href: "/dashboard/admin/allproducts" },
-    { icon: Users, label: "My profile", href: "/dashboard/myprofile" },
+    {icon: LayoutHeaderCells,label: "Overview",href: "/dashboard/user",},
+    {icon: Bot,label: "AI Chat Mentor",href: "/dashboard/ai/ai-chat",},
+    {icon: ImageIcon,label: "AI Image Analyzer",href: "/dashboard/ai/ai-image-analyzer",},
+    {icon: Code2,label: "AI Code Helper",href: "/dashboard/ai/ai-code-helper",},
+    {icon: FileText,label: "AI Content Generator",href: "/dashboard/ai/ai-content-generator",},
+    {icon: NotebookPen,label: "AI Notes Summarizer",href: "/dashboard/ai/ai-notes-summarizer",},
+    {icon: BrainCircuit,label: "AI Quiz Generator",href: "/dashboard/ai/ai-quiz-generator",},
+    {icon: Users,label: "My Profile",href: "/dashboard/myprofile",},
   ],
   admin: [
     { icon: House, label: "Overview", href: "/dashboard/admin" },

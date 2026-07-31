@@ -55,15 +55,15 @@ export default function Navbar() {
             Home
           </Link>
 
-          <Link href="/about" className="text-white hover:text-purple-400">
+          <Link href="/home/about" className="text-white hover:text-purple-400">
             About
           </Link>
 
-          <Link href="/features" className="text-white hover:text-purple-400">
+          <Link href="/home/features" className="text-white hover:text-purple-400">
             Features
           </Link>
 
-          <Link href="/pricing" className="text-white hover:text-purple-400">
+          <Link href="/home/pricing" className="text-white hover:text-purple-400">
             Pricing
           </Link>
         </div>
@@ -132,15 +132,15 @@ export default function Navbar() {
               Home
             </Link>
 
-            <Link href="/about" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
+            <Link href="/home/about" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
               About
             </Link>
 
-            <Link href="/features" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
+            <Link href="/home/features" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
               Features
             </Link>
 
-            <Link href="/pricing" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
+            <Link href="/home/pricing" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
               Pricing
             </Link>
 
