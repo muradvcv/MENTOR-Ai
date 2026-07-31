@@ -1,33 +1,26 @@
 "use client"
-import React, { useState } from "react";
 import Link from "next/link";
 import {
   Bot,
   Mail,
   Phone,
   MapPin,
-  Send,
-
-  Sparkles,
   ArrowRight
 } from "lucide-react";
 import { GiThunderBlade } from "react-icons/gi";
 import { LiaLinkedin } from "react-icons/lia";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export const Footer: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubscribed(true);
-      setEmail("");
-      setTimeout(() => setSubscribed(false), 4000);
-    }
-  };
+  const pathname = usePathname();
+  if (pathname.includes('dashboard')) {
+    return null
+  }
+
+
 
   return (
     <footer className="relative bg-[#0B0712] text-gray-300 border-t border-purple-900/30 overflow-hidden pt-16 pb-8">
@@ -37,7 +30,7 @@ export const Footer: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-       
+
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-purple-900/20">
 
