@@ -8,7 +8,7 @@ import {
 } from "@gravity-ui/icons";
 import {
   House, PackagePlus, Package, ShoppingCart, Users, CircleDollarSign,Bot,
-ImageIcon,Code2,FileText,NotebookPen,BrainCircuit,
+ImageIcon,FileText,BrainCircuit,
 } from "lucide-react";
 
 import { Button, Drawer } from "@heroui/react";
@@ -29,10 +29,10 @@ const navItems: Record<Role, NavItem[]> = {
     {icon: LayoutHeaderCells,label: "Overview",href: "/dashboard/user",},
     {icon: Bot,label: "AI Chat Mentor",href: "/dashboard/ai/ai-chat",},
     {icon: ImageIcon,label: "AI Image Analyzer",href: "/dashboard/ai/ai-image-analyzer",},
-    {icon: Code2,label: "AI Code Helper",href: "/dashboard/ai/ai-code-helper",},
     {icon: FileText,label: "AI Content Generator",href: "/dashboard/ai/ai-content-generator",},
-    {icon: NotebookPen,label: "AI Notes Summarizer",href: "/dashboard/ai/ai-notes-summarizer",},
     {icon: BrainCircuit,label: "AI Quiz Generator",href: "/dashboard/ai/ai-quiz-generator",},
+    { icon: PackagePlus, label: "Add Product", href: "/dashboard/admin/additeam" },
+    { icon: Package, label: "Manage Products", href: "/dashboard/admin/allproducts" },
     {icon: Users,label: "My Profile",href: "/dashboard/myprofile",},
   ],
   admin: [
@@ -48,7 +48,6 @@ const navItems: Record<Role, NavItem[]> = {
 
 // ---------- Loading placeholders ----------
 
-// একটা ড্যাশবোর্ড মেনু আইটেম (আইকন + লেবেল) লোড হওয়ার সময় দেখানো placeholder
 function DashboardItemLoading() {
   return (
     <div className="flex items-center gap-3 rounded-xl border border-purple-500/20 bg-white/5 px-4 py-3 backdrop-blur-lg shadow-lg shadow-purple-500/10">
@@ -121,7 +120,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop */}
-      <aside className="hidden md:flex md:flex-col w-64 border-r border-default-200 min-h-screen h-screen sticky top-0 p-4">
+      <aside className="hidden md:flex md:flex-col border-r border-default-200 min-h-screen h-screen sticky top-0 p-4">
         <Topbar />
         {isPending ? (
           <>
@@ -130,7 +129,7 @@ export default function Sidebar() {
           </>
         ) : (
           <>
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-3">
               {items.map((item) => {
                 const active = isActive(item.href);
 
@@ -138,7 +137,7 @@ export default function Sidebar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`group flex items-center gap-3 rounded-xl border px-4 py-3 backdrop-blur-xl transition-all duration-300 ${active
+                    className={`group flex items-center gap-3 rounded-xl border px-3 py-2 backdrop-blur-xl transition-all duration-300 ${active
                       ? "border-purple-500/40 bg-purple-500/15 text-white shadow-md shadow-purple-500/20"
                       : "border-white/10 bg-white/5 text-gray-300 hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-white"
                       }`}

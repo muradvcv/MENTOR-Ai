@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { IoLogOutOutline } from "react-icons/io5";
+import Logo from "@/app/icon.png"
 
 
 type User = {
@@ -40,9 +41,8 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700 to-purple-500 font-bold text-white shadow-[0_0_25px_rgba(168,85,247,0.5)]">
-            AI
-          </div>
+          {/* logo */}
+                      <Image src={Logo} alt="logo" width={50} height={50}/>
 
           <h1 className="text-xl font-bold text-white">
             Mentor<span className="text-purple-500">AI</span>

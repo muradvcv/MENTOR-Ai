@@ -3,7 +3,7 @@
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
+import Logo from "@/app/icon.png"
 
 const Topbar = () => {
   return (
@@ -21,7 +21,8 @@ const Topbar = () => {
       >
 
         <div>
-          <h1 className="text-xl font-bold text-white">
+          <h1 className="text-xl font-bold text-white flex items-center">
+            <Image src={Logo} alt="logo" width={50} height={50} />
             Mentor<span className="text-purple-600">AI</span>
           </h1>
 

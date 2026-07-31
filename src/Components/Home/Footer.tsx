@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import {
-  Bot,
+
   Mail,
   Phone,
   MapPin,
@@ -12,6 +12,8 @@ import { LiaLinkedin } from "react-icons/lia";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import Logo from "@/app/icon.png"
+import Image from "next/image";
 
 export const Footer: React.FC = () => {
 
@@ -37,11 +39,10 @@ export const Footer: React.FC = () => {
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-flex items-center gap-3 group">
-              <div className="p-2.5 rounded-xl bg-gradient-to-tr from-purple-700 to-indigo-600 text-white shadow-lg shadow-purple-600/30 group-hover:scale-105 transition-transform duration-300">
-                <Bot className="w-6 h-6" />
-              </div>
+            {/* logo */}
+             <Image src={Logo} alt="logo" width={50} height={50}/>
               <span className="text-2xl font-extrabold bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
-                AgentPulse<span className="text-purple-500">.ai</span>
+                Mentor<span className="text-purple-500">.ai</span>
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
