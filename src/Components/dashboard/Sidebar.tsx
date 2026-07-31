@@ -120,7 +120,7 @@ export default function Sidebar() {
   return (
     <>
       {/* Desktop */}
-      <aside className="hidden md:flex md:flex-col border-r border-default-200 min-h-screen h-screen sticky top-0 p-4">
+      <aside className="hidden md:flex md:flex-col border-r border-purple-800/50 min-h-screen h-screen sticky top-0 p-4">
         <Topbar />
         {isPending ? (
           <>
