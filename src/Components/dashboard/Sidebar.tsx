@@ -25,13 +25,13 @@ const navItems: Record<Role, NavItem[]> = {
   user: [
     { icon: LayoutHeaderCells, label: "Overview", href: "/dashboard/user" },
     { icon: PackagePlus, label: "Add Product", href: "/dashboard/admin/additeam" },
-    { icon: Package, label: "All Products", href: "/dashboard/admin/manageproduct" },
+    { icon: Package, label: "All Products", href: "/dashboard/admin/allproducts" },
     { icon: Users, label: "My profile", href: "/dashboard/myprofile" },
   ],
   admin: [
     { icon: House, label: "Overview", href: "/dashboard/admin" },
     { icon: PackagePlus, label: "Add Product", href: "/dashboard/admin/additeam" },
-    { icon: Package, label: "Manage Products", href: "/dashboard/admin/manageproduct" },
+    { icon: Package, label: "Manage Products", href: "/dashboard/admin/allproducts" },
     { icon: ShoppingCart, label: "Manage Orders", href: "/dashboard/admin/manageorders" },
     { icon: Users, label: "Manage Users", href: "/dashboard/admin/manageuser" },
     { icon: CircleDollarSign, label: "Total Revenue", href: "/dashboard/admin/revenue" },
@@ -123,33 +123,33 @@ export default function Sidebar() {
           </>
         ) : (
           <>
-              <nav className="flex flex-col gap-2">
-                {items.map((item) => {
-                  const active = isActive(item.href);
+            <nav className="flex flex-col gap-2">
+              {items.map((item) => {
+                const active = isActive(item.href);
 
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`group flex items-center gap-3 rounded-xl border px-4 py-3 backdrop-blur-xl transition-all duration-300 ${active
-                          ? "border-purple-500/40 bg-purple-500/15 text-white shadow-md shadow-purple-500/20"
-                          : "border-white/10 bg-white/5 text-gray-300 hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-white"
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`group flex items-center gap-3 rounded-xl border px-4 py-3 backdrop-blur-xl transition-all duration-300 ${active
+                      ? "border-purple-500/40 bg-purple-500/15 text-white shadow-md shadow-purple-500/20"
+                      : "border-white/10 bg-white/5 text-gray-300 hover:border-purple-500/30 hover:bg-purple-500/10 hover:text-white"
+                      }`}
+                  >
+                    <item.icon
+                      className={`h-5 w-5 ${active ? "text-purple-400" : "text-gray-400"
                         }`}
-                    >
-                      <item.icon
-                        className={`h-5 w-5 ${active ? "text-purple-400" : "text-gray-400"
-                          }`}
-                      />
-                      <span className={active ? "font-semibold" : "font-medium"}>
-                        {item.label}
-                      </span>
-                    </Link>
-                  );
-                })}
-              </nav>
+                    />
+                    <span className={active ? "font-semibold" : "font-medium"}>
+                      {item.label}
+                    </span>
+                  </Link>
+                );
+              })}
+            </nav>
             {/* always bottom mt-auto */}
             <div className="mt-auto">
-              <Profile/>
+              <Profile />
             </div>
           </>
         )}
@@ -198,8 +198,8 @@ export default function Sidebar() {
                             key={item.href}
                             href={item.href}
                             className={`flex items-center gap-3 rounded-xl border px-4 py-3 backdrop-blur-md transition-all duration-300 ${active
-                                ? "border-purple-500/30 bg-purple-500/20 text-white shadow-lg shadow-purple-500/20"
-                                : "border-white/10 bg-white/5 text-gray-300 hover:border-purple-500/20 hover:bg-white/10 hover:text-white"
+                              ? "border-purple-500/30 bg-purple-500/20 text-white shadow-lg shadow-purple-500/20"
+                              : "border-white/10 bg-white/5 text-gray-300 hover:border-purple-500/20 hover:bg-white/10 hover:text-white"
                               }`}
                           >
                             <item.icon
