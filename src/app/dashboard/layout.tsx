@@ -13,8 +13,8 @@ export default function DashboardLayout({
       <Sidebar />
 
       <div className="flex flex-1 flex-col overflow-hidden">
-        <header className="h-16 border-b flex items-center px-6">
-          navbar
+        <header className=" border-b flex items-center px-6">
+         
         </header>
 
         <main className="flex-1 overflow-y-auto p-6">
