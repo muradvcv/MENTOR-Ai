@@ -31,8 +31,8 @@ const navItems: Record<Role, NavItem[]> = {
     {icon: ImageIcon,label: "AI Image Analyzer",href: "/dashboard/ai/ai-image-analyzer",},
     {icon: FileText,label: "AI Content Generator",href: "/dashboard/ai/ai-content-generator",},
     {icon: BrainCircuit,label: "AI Quiz Generator",href: "/dashboard/ai/ai-quiz-generator",},
-    { icon: PackagePlus, label: "Add Product", href: "/dashboard/admin/additeam" },
-    { icon: Package, label: "Manage Products", href: "/dashboard/admin/allproducts" },
+    { icon: PackagePlus, label: "Add Jobs", href: "/dashboard/admin/additeam" },
+    { icon: Package, label: "Manage Jobs", href: "/dashboard/admin/allproducts" },
     {icon: Users,label: "My Profile",href: "/dashboard/myprofile",},
   ],
   admin: [
