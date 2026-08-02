@@ -167,7 +167,7 @@ const AddJob = () => {
 
           <div>
             <label className="mb-2 block text-sm font-medium text-gray-300">
-              Minimum Salary
+              Min Salary
             </label>
 
             <input
