@@ -1,9 +1,9 @@
 "use server"
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
 export const postJob = async (jobData: unknown) => {
   try {
-    const res = await fetch(`${API_URL}/api/jobs`, {
+    const res = await fetch(`${baseUrl}/api/addjob`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,3 +21,10 @@ export const postJob = async (jobData: unknown) => {
     throw error;
   }
 };
+
+
+// get all jobs
+export const getJobs = async () => {
+ const res=await fetch(`${baseUrl}/api/getjobs`)
+ return await res.json()
+}

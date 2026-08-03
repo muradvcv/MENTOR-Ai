@@ -1,10 +1,14 @@
 "use client";
 
 import { postJob } from "@/lib/actions/jobs";
+import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
 
 const AddJob = () => {
   const [skills, setSkills] = useState("");
+  const { data: session} = authClient.useSession();
+    const user = session?.user;
+   
 
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,6 +34,9 @@ const AddJob = () => {
       requirements: formData.get("requirements"),
       benefits: formData.get("benefits"),
       createdAt: new Date(),
+      role: user?.role,
+      posterEmail: user?.email,
+      posterId: user?.id,
     };
     const res=await postJob(jobData)
     form.reset();
