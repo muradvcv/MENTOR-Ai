@@ -32,7 +32,7 @@ const navItems: Record<Role, NavItem[]> = {
     {icon: FileText,label: "AI Content Generator",href: "/dashboard/ai/ai-content-generator",},
     {icon: BrainCircuit,label: "AI Quiz Generator",href: "/dashboard/ai/ai-quiz-generator",},
     { icon: PackagePlus, label: "Add Jobs", href: "/dashboard/admin/additeam" },
-    { icon: Package, label: "Manage Jobs", href: "/dashboard/admin/allproducts" },
+    { icon: Package, label: "Manage Jobs", href: "/" },
     {icon: Users,label: "My Profile",href: "/dashboard/myprofile",},
   ],
   admin: [

@@ -59,8 +59,8 @@ export default function Navbar() {
             About
           </Link>
 
-          <Link href="/home/features" className="text-white hover:text-purple-400">
-            Features
+          <Link href="/home/alljobs" className="text-white hover:text-purple-400">
+           jobs
           </Link>
 
           <Link href="/home/pricing" className="text-white hover:text-purple-400">
@@ -136,8 +136,8 @@ export default function Navbar() {
               About
             </Link>
 
-            <Link href="/home/features" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
-              Features
+            <Link href="/home/alljobs" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
+              jobs
             </Link>
 
             <Link href="/home/pricing" onClick={() => setOpen(false)} className="text-white hover:text-purple-400">
